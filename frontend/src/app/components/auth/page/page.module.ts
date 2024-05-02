@@ -6,15 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { BattleComponent } from './battle/battle.component';
 import {FormsModule} from '@angular/forms';
 
 
 const routes: Routes = [
   { path: 'sign', component: SignComponent },
   {path : 'login', component: LoginComponent},
-  {path : 'home', component: HomeComponent},
-  {path : 'battle', component: BattleComponent}
+  {path : 'home', component: HomeComponent}
 
 ];
 
@@ -22,8 +20,7 @@ const routes: Routes = [
   declarations: [
     SignComponent,
     LoginComponent,
-    HomeComponent,
-    BattleComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +29,6 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  exports: [SignComponent, LoginComponent, HomeComponent, BattleComponent]
+  exports: [SignComponent, LoginComponent, HomeComponent]
 })
 export class PageModule { }
