@@ -1,0 +1,27 @@
+<body>
+  <div class="container">
+    <form  [formGroup]="formAuth"  (ngSubmit)="submitForm()">
+      <img class="logo" src="../../../../../assets/DALL·E 2024-05-01 18.05.39 - Design a sleek and minimalistic logo for 'Arena Pokémon' to fit into the provided battle scene. The logo should consist of the name in a horizontal la.webp" alt="">
+      <label for="">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="Email" name="email" required formControlName="email">
+      </label>
+      <label for="">
+        <i class="fas fa-key"></i>
+        <input type="password" placeholder="Password" name="password" required formControlName="password">
+      </label>
+
+      <button type="submit" [disabled]="formAuth.invalid"><img class="pokebola" src="../../../../../assets/pokebola.png" alt="">Login</button>
+
+    </form>
+
+    <span class="mgError" *ngIf="mgError">{{mgError}}</span>
+
+
+    <div class="link">
+      <a routerLink="/sign">back to register</a>
+    </div>
+
+
+  </div>
+</body>

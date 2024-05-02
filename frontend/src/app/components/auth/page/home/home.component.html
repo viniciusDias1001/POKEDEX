@@ -1,0 +1,72 @@
+<body>
+  <div>
+    <header>
+      <div class="header">
+
+        <img src="../../../../../assets/pokebola.png" alt="Logo Pokedex">
+      <label for="">POKÉDEX</label>
+      <a routerLink="/battle" routerLinkActive="active"><img src="../../../../../assets/arma.png" alt="batalha"></a>
+
+    </div>
+
+      <div class="audio-control">
+        <audio #pokemonTheme loop>
+          <source src="../../../../../assets/Pokémon - 1ª Abertura _ Português PT-BR _ Legenda-CC ⁴ᴷ⁶⁰ (320).mp3" type="audio/mpeg">
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <button #audioButton (click)="toggleAudio()"><i class="fas fa-volume-up"></i></button>
+      </div>
+
+
+
+
+
+
+    </header>
+  </div>
+
+  <div class="middle-busc">
+
+    <form>
+      <i class="fas fa-search"></i>
+      <input class="busca" type="text" #input (keyup)="search(input.value); getSearch(input.value)" placeholder="Buscar Pokemon...">
+    </form>
+  </div>
+
+  <section class="section-all">
+
+<section class="listagem">
+  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
+      <section class="pokemon__status">
+        <h2 class="pokemon-name">
+          {{ pokemon.name }}
+        </h2>
+
+        <ul>
+          <li *ngFor="let value of pokemon.status.types">
+            {{value.type.name}}
+          </li>
+        </ul>
+      </section>
+
+      <section class="pokemon__image">
+        <img
+          [src]="pokemon.status.sprites.other.dream_world.front_default"
+          [alt]="pokemon.name"
+        >
+      </section>
+    </a>
+  </ng-template>
+</section>
+
+<img
+  src="assets/error.png"
+  alt="Deu erro na mostragem do pokemon"
+  width="100%"
+  *ngIf="apiError"
+>
+  </section>
+
+
+</body>

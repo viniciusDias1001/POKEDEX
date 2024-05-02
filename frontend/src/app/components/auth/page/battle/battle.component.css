@@ -1,0 +1,15 @@
+.battle-area {
+  background-image: url('/path-to-battle-background.jpg');
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+}
+
+.pokemon-selector {
+  margin-bottom: 20px;
+}
+
+.battle-description {
+  margin-top: 20px;
+  font-weight: bold;
+}
